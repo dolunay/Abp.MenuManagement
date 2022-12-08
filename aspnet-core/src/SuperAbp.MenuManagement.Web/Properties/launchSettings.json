@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "SuperAbp.MenuManagement.Web": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:14458;http://localhost:14459"
+    }
+  }
+}

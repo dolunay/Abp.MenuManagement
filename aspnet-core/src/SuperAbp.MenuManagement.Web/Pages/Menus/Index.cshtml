@@ -1,0 +1,48 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Localization
+@using SuperAbp.MenuManagement.Localization
+@using SuperAbp.MenuManagement.Permissions
+@using SuperAbp.MenuManagement.Web.Menus
+@using SuperAbp.MenuManagement.Web.Pages.Menus
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Button
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Card
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Grid
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Table
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Pages.Shared.Components.AbpPageToolbar
+@model IndexModel
+@inject IStringLocalizer<MenuManagementResource> L
+
+@inject IAuthorizationService Authorization
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Menus"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:Menu"].Value);
+    PageLayout.Content.MenuItemName = MenuManagementMenus.Menu;
+}
+
+@section scripts {
+    <abp-script-bundle name="@typeof(IndexModel).FullName">
+        <abp-script src="/Pages/Menus/index.js"/>
+    </abp-script-bundle>
+}
+<abp-card id="MenusWrapper">
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Menu"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                @if (await Authorization.IsGrantedAsync(MenuManagementPermissions.Menus.Create))
+                {
+                    <abp-button icon="plus" text="@L["NewMenu"].Value" button-type="Primary" id="CreateNewMenuButtonId"></abp-button>
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" class="nowrap"></abp-table>
+    </abp-card-body>
+</abp-card>

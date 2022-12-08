@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "SuperAbp.MenuManagement": {
+      "path": "SuperAbp.MenuManagement.abpmdl.json"
+    }
+  }
+}

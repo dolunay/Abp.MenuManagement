@@ -1,0 +1,38 @@
+﻿@page
+@using Microsoft.Extensions.Localization
+@using SuperAbp.MenuManagement.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Form
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model SuperAbp.MenuManagement.Web.Pages.Menus.CreateOrEditorModalModel
+@inject IStringLocalizer<MenuManagementResource> L
+@{
+    Layout = null;
+}
+<form method="post" asp-page="/Pages/Menus/Create">
+    <abp-modal size="@(AbpModalSize.Large)">
+        <abp-modal-header title="@L["NewMenu"].Value"></abp-modal-header>
+        <abp-modal-body>
+            @*<abp-input asp-for="Menu.ParentId" />*@
+            <abp-input asp-for="Menu.Name" />
+            <abp-input asp-for="Menu.Permission" />
+            <abp-input asp-for="Menu.Icon" />
+            <abp-input asp-for="Menu.Route" />
+            <abp-input asp-for="Menu.Sort" />
+            <abp-input asp-for="Menu.Group" />
+            <abp-input asp-for="Menu.HideInBreadcrumb" />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)">
+        </abp-modal-footer>
+    </abp-modal>
+</form>
+
+@*<abp-dynamic-form submit-button="false" abp-model="Menu" asp-page="/Pages/Menus/Create">
+    <abp-modal size="@(AbpModalSize.Large)">
+        <abp-modal-header title="@L["NewMenu"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)">
+        </abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>*@

@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "SuperAbp.MenuManagement.Domain.Shared": {
+      "path": "src/SuperAbp.MenuManagement.Domain.Shared/SuperAbp.MenuManagement.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.Domain": {
+      "path": "src/SuperAbp.MenuManagement.Domain/SuperAbp.MenuManagement.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.Application.Contracts": {
+      "path": "src/SuperAbp.MenuManagement.Application.Contracts/SuperAbp.MenuManagement.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.Application": {
+      "path": "src/SuperAbp.MenuManagement.Application/SuperAbp.MenuManagement.Application.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.EntityFrameworkCore": {
+      "path": "src/SuperAbp.MenuManagement.EntityFrameworkCore/SuperAbp.MenuManagement.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.MongoDB": {
+      "path": "src/SuperAbp.MenuManagement.MongoDB/SuperAbp.MenuManagement.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.HttpApi": {
+      "path": "src/SuperAbp.MenuManagement.HttpApi/SuperAbp.MenuManagement.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.HttpApi.Client": {
+      "path": "src/SuperAbp.MenuManagement.HttpApi.Client/SuperAbp.MenuManagement.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.TestBase": {
+      "path": "test/SuperAbp.MenuManagement.TestBase/SuperAbp.MenuManagement.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "SuperAbp.MenuManagement.EntityFrameworkCore.Tests": {
+      "path": "test/SuperAbp.MenuManagement.EntityFrameworkCore.Tests/SuperAbp.MenuManagement.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "SuperAbp.MenuManagement.MongoDB.Tests": {
+      "path": "test/SuperAbp.MenuManagement.MongoDB.Tests/SuperAbp.MenuManagement.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "SuperAbp.MenuManagement.Domain.Tests": {
+      "path": "test/SuperAbp.MenuManagement.Domain.Tests/SuperAbp.MenuManagement.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "SuperAbp.MenuManagement.Application.Tests": {
+      "path": "test/SuperAbp.MenuManagement.Application.Tests/SuperAbp.MenuManagement.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "SuperAbp.MenuManagement.HttpApi.Host": {
+      "path": "host/SuperAbp.MenuManagement.HttpApi.Host/SuperAbp.MenuManagement.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "SuperAbp.MenuManagement.Web": {
+      "path": "src/SuperAbp.MenuManagement.Web/SuperAbp.MenuManagement.Web.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/SuperAbp.MenuManagement.HttpApi.Client.ConsoleTestApp/SuperAbp.MenuManagement.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "SuperAbp.MenuManagement.Web.Host": {
+      "path": "host/SuperAbp.MenuManagement.Web.Host/SuperAbp.MenuManagement.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "SuperAbp.MenuManagement.AuthServer": {
+      "path": "host/SuperAbp.MenuManagement.AuthServer/SuperAbp.MenuManagement.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "SuperAbp.MenuManagement.Host.Shared": {
+      "path": "host/SuperAbp.MenuManagement.Host.Shared/SuperAbp.MenuManagement.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "SuperAbp.MenuManagement.Web.Unified": {
+      "path": "host/SuperAbp.MenuManagement.Web.Unified/SuperAbp.MenuManagement.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "SuperAbp.MenuManagement.Blazor": {
+      "path": "src/SuperAbp.MenuManagement.Blazor/SuperAbp.MenuManagement.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.Blazor.Host": {
+      "path": "host/SuperAbp.MenuManagement.Blazor.Host/SuperAbp.MenuManagement.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "SuperAbp.MenuManagement.Blazor.Server": {
+      "path": "src/SuperAbp.MenuManagement.Blazor.Server/SuperAbp.MenuManagement.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.Blazor.WebAssembly": {
+      "path": "src/SuperAbp.MenuManagement.Blazor.WebAssembly/SuperAbp.MenuManagement.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "SuperAbp.MenuManagement.Blazor.Server.Host": {
+      "path": "host/SuperAbp.MenuManagement.Blazor.Server.Host/SuperAbp.MenuManagement.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}
