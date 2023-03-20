@@ -2,7 +2,7 @@
 
 namespace SuperAbp.MenuManagement.Localization;
 
-[LocalizationResourceName("MenuManagement")]
+[LocalizationResourceName("SuperAbpMenuManagement")]
 public class MenuManagementResource
 {
 
