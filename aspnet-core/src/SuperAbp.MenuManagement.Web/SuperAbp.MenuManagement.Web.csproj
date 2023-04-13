@@ -5,7 +5,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
-    <IsPackable>true</IsPackable>
+    <IsPackable>false</IsPackable>
     <OutputType>Library</OutputType>
     <RootNamespace>SuperAbp.MenuManagement.Web</RootNamespace>
     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
