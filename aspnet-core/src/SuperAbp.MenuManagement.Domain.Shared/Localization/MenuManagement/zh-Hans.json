@@ -3,9 +3,9 @@
   "texts": {
     "ManageYourProfile": "管理个人资料",
     "NewMenu": "新菜单",
-    "Menu": "菜单", 
-    "PlaceHolder": "请输入{0}",
-    "ChoosePlaceHolder": "请选择{0}",
+    "Menu": "菜单",
+    "Placeholder": "请输入{0}",
+    "ChoosePlaceholder": "请选择{0}",
     "Reset": "重置",
     "Validating": "验证中...",
     "Name": "名称",
