@@ -9,6 +9,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>SuperAbp.MenuManagement.Web</RootNamespace>
     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	  <PackageProjectUrl>https://superabp.com/</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/SuperAbp/MenuManagement</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
