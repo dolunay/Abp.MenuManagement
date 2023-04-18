@@ -6,6 +6,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>SuperAbp.MenuManagement</RootNamespace>
 	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <Authors>SuperAbp</Authors>
+	  <Company>SuperAbp</Company>
+	  <Product>SuperAbp.MenuManagement</Product>
 	  <PackageProjectUrl>https://superabp.com/</PackageProjectUrl>
 	  <RepositoryUrl>https://github.com/SuperAbp/MenuManagement</RepositoryUrl>
   </PropertyGroup>
