@@ -17,9 +17,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SuperAbp.AspNetCore.Mvc.UI.Packages.ZTree" Version="1.1.0" />
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="7.1.0" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared" Version="7.1.0" />
+    <PackageReference Include="SuperAbp.AspNetCore.Mvc.UI.Packages.ZTree" Version="0.2.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="7.2.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared" Version="7.2.1" />
   </ItemGroup>
 
   <ItemGroup>

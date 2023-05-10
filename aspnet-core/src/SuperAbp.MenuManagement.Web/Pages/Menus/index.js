@@ -1,5 +1,5 @@
 ﻿(function ($) {
-    var l = abp.localization.getResource('MenuManagement');
+    var l = abp.localization.getResource('SuperAbpMenuManagement');
 
     var _menuAppService = superAbp.menuManagement.menus.menu;
 
