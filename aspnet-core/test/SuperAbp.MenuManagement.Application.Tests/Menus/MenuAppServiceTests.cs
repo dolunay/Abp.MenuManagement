@@ -8,7 +8,7 @@ using Xunit;
 
 namespace SuperAbp.MenuManagement.Menus
 {
-    public sealed class MenuAppServiceTests: MenuManagementApplicationTestBase
+    public sealed class MenuAppServiceTests : MenuManagementApplicationTestBase
     {
         private readonly MenuTestData _menuTestData;
         private readonly IMenuAppService _menuAppService;
@@ -32,19 +32,19 @@ namespace SuperAbp.MenuManagement.Menus
             var result = await _menuAppService.GetEditorAsync(_menuTestData.MenuId);
             result.ShouldNotBeNull();
         }
-        
+
         [Fact]
         public async Task Should_Create_A_Article()
         {
             var dto = new MenuCreateDto()
             {
-                Name = "名称",
-                Permission = "权限",
+                Name = "test_name",
+                Permission = "test_permission",
                 Group = false,
                 HideInBreadcrumb = false,
-                Icon = "图标",
+                Icon = "test_icon",
                 ParentId = _menuTestData.MenuId,
-                Route = "路由",
+                Route = "test_route",
                 Sort = 999
             };
             var articleDto = await _menuAppService.CreateAsync(dto);
@@ -71,13 +71,13 @@ namespace SuperAbp.MenuManagement.Menus
             {
                 var dto = new MenuUpdateDto()
                 {
-                    Name = "新名称",
-                    Permission = "新权限",
+                    Name = "new_name",
+                    Permission = "new_permission",
                     Group = true,
                     HideInBreadcrumb = true,
-                    Icon = "新名称",
+                    Icon = "new_icon",
                     ParentId = null,
-                    Route = "新权限",
+                    Route = "new_route",
                     Sort = 999
                 };
                 await _menuAppService.UpdateAsync(_menuTestData.MenuId, dto);

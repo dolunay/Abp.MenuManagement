@@ -31,13 +31,13 @@ public class MenuManagementDataSeedContributor : IDataSeedContributor, ITransien
         {
             await _menuRepository.InsertAsync(new Menu(_menuTestData.MenuId)
             {
-                Name = "名称",
-                Permission = "权限",
+                Name = "Name",
+                Permission = "Permission",
                 Group = false,
                 HideInBreadcrumb = false,
-                Icon = "图标",
+                Icon = "Icon",
                 ParentId = null,
-                Route = "路由",
+                Route = "Route",
                 Sort = 999
             });
         }

@@ -89,7 +89,7 @@ namespace SuperAbp.MenuManagement.Menus
         {
             await NormalizeMaxResultCountAsync(input);
 
-            var menuQueryable = await _menuRepository.WithDetailsAsync(m=>m.Parent);
+            var menuQueryable = await _menuRepository.WithDetailsAsync(m => m.Parent);
             var tempQuery = menuQueryable
                 .WhereIf(input.ParentId.HasValue, m => m.ParentId == input.ParentId)
                 .WhereIf(!string.IsNullOrEmpty(input.Name), m => m.Name.Contains(input.Name));
@@ -97,7 +97,7 @@ namespace SuperAbp.MenuManagement.Menus
             long totalCount = await AsyncExecuter.CountAsync(tempQuery);
 
             var entities = await AsyncExecuter.ToListAsync(tempQuery
-                .OrderBy(input.Sorting ?? "Sort DESC")
+                .OrderBy(input.Sorting ?? MenuConsts.DefaultSorting)
                 .Skip(input.SkipCount)
                 .Take(input.MaxResultCount));
 
