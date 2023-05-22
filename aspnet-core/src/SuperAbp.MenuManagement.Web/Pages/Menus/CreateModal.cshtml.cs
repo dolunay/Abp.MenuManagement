@@ -8,7 +8,7 @@ namespace SuperAbp.MenuManagement.Web.Pages.Menus
 {
     public class CreateOrEditorModalModel : MenuManagementPageModel
     {
-        private  readonly  IMenuAppService _menuAppService;
+        private readonly IMenuAppService _menuAppService;
         private readonly IAuthorizationService _authorization;
 
         public CreateOrEditorModalModel(IMenuAppService menuAppService, IAuthorizationService authorization)
@@ -19,6 +19,7 @@ namespace SuperAbp.MenuManagement.Web.Pages.Menus
 
         [BindProperty]
         public MenuCreateViewModel Menu { get; set; }
+
         public async Task<ActionResult> OnGetAsync()
         {
             if (!await _authorization.IsGrantedAsync(MenuManagementPermissions.Menus.Create))
@@ -36,8 +37,7 @@ namespace SuperAbp.MenuManagement.Web.Pages.Menus
         }
     }
 
-    public class MenuCreateViewModel:MenuCreateOrEditViewModel
+    public class MenuCreateViewModel : MenuCreateOrEditViewModel
     {
-        
     }
 }

@@ -19,8 +19,12 @@ namespace SuperAbp.MenuManagement.Web.Pages.Menus
         [Placeholder("Route")]
         public string Route { get; set; }
 
+        [Placeholder("Key")]
+        public string Key { get; set; }
+
         [Placeholder("Sort")]
         public int Sort { get; set; }
+
         public Guid? ParentId { get; set; }
 
         /// <summary>

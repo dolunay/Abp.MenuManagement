@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using SuperAbp.MenuManagement.Menus;
+using SuperAbp.MenuManagement.Web.Pages.Menus;
 
 namespace SuperAbp.MenuManagement.Web;
 
@@ -6,8 +8,6 @@ public class MenuManagementWebAutoMapperProfile : Profile
 {
     public MenuManagementWebAutoMapperProfile()
     {
-        /* You can configure your AutoMapper mapping configuration here.
-         * Alternatively, you can split your mapping configurations
-         * into multiple profile classes for a better organization. */
+        CreateMap<MenuCreateViewModel, MenuCreateDto>();
     }
 }

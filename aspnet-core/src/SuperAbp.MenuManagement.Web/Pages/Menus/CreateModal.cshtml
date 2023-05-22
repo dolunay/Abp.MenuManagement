@@ -8,7 +8,7 @@
 @{
     Layout = null;
 }
-<form method="post" asp-page="/Pages/Menus/Create">
+<form method="post" asp-page="/Menus/CreateModal">
     <abp-modal size="@(AbpModalSize.Large)">
         <abp-modal-header title="@L["NewMenu"].Value"></abp-modal-header>
         <abp-modal-body>
@@ -17,6 +17,7 @@
             <abp-input asp-for="Menu.Permission" />
             <abp-input asp-for="Menu.Icon" />
             <abp-input asp-for="Menu.Route" />
+            <abp-input asp-for="Menu.Key" />
             <abp-input asp-for="Menu.Sort" />
             <abp-input asp-for="Menu.Group" />
             <abp-input asp-for="Menu.HideInBreadcrumb" />
