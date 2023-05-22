@@ -24,7 +24,7 @@ namespace SuperAbp.MenuManagement.Web.Pages.Menus
         {
             if (!await _authorization.IsGrantedAsync(MenuManagementPermissions.Menus.Create))
             {
-                return RedirectToPage("/Pages/Menus/Index");
+                return RedirectToPage("/Menus/Index");
             }
             return Page();
         }
