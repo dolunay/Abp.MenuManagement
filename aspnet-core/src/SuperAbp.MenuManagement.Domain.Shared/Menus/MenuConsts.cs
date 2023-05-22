@@ -7,5 +7,6 @@
         public const int MaxPermissionLength = 50;
         public const int MaxIconLength = 50;
         public const int MaxRouteLength = 255;
+        public const int MaxKeyLength = 128;
     }
 }

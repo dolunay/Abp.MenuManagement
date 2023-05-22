@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using SuperAbp.MenuManagement.Menus;
 using SuperAbp.MenuManagement.Permissions;
 using Volo.Abp.Application.Dtos;
+using Volo.Abp.Domain.Repositories;
 
 namespace SuperAbp.MenuManagement.Menus
 {
@@ -44,8 +45,7 @@ namespace SuperAbp.MenuManagement.Menus
         /// <returns></returns>
         public virtual async Task<ListResultDto<MenuTreeNodeDto>> GetRootAsync()
         {
-            var menuQueryable = await _menuRepository.GetQueryableAsync();
-            var menus = await AsyncExecuter.ToListAsync(menuQueryable.Where(m => m.ParentId == null));
+            var menus = await _menuRepository.GetListAsync(m => m.ParentId == null);
             List<MenuTreeNodeDto> treeNodes = await Menu2TreeNodeAsync(menus);
             return new ListResultDto<MenuTreeNodeDto>(treeNodes);
         }
@@ -57,8 +57,7 @@ namespace SuperAbp.MenuManagement.Menus
         /// <returns></returns>
         public virtual async Task<ListResultDto<MenuTreeNodeDto>> GetChildrenAsync(Guid id)
         {
-            var menuQueryable = await _menuRepository.GetQueryableAsync();
-            var menus = await AsyncExecuter.ToListAsync(menuQueryable.Where(m => m.ParentId == id));
+            var menus = await _menuRepository.GetListAsync(m => m.ParentId == id);
             List<MenuTreeNodeDto> treeNodes = await Menu2TreeNodeAsync(menus);
             return new ListResultDto<MenuTreeNodeDto>(treeNodes);
         }
@@ -74,7 +73,7 @@ namespace SuperAbp.MenuManagement.Menus
             foreach (Menu menu in menus)
             {
                 MenuTreeNodeDto treeNode = ObjectMapper.Map<Menu, MenuTreeNodeDto>(menu);
-                treeNode.IsLeaf = !await AsyncExecuter.AnyAsync(await _menuRepository.GetQueryableAsync(), m => m.ParentId == menu.Id);
+                treeNode.IsLeaf = !await _menuRepository.AnyAsync(m => m.ParentId == menu.Id);
                 treeNodes.Add(treeNode);
             }
             return treeNodes;
@@ -89,7 +88,7 @@ namespace SuperAbp.MenuManagement.Menus
         {
             await NormalizeMaxResultCountAsync(input);
 
-            var menuQueryable = await _menuRepository.WithDetailsAsync(m => m.Parent);
+            var menuQueryable = await _menuRepository.WithDetailsAsync();
             var tempQuery = menuQueryable
                 .WhereIf(input.ParentId.HasValue, m => m.ParentId == input.ParentId)
                 .WhereIf(!string.IsNullOrEmpty(input.Name), m => m.Name.Contains(input.Name));
@@ -154,7 +153,7 @@ namespace SuperAbp.MenuManagement.Menus
         [Authorize(MenuManagementPermissions.Menus.Delete)]
         public virtual async Task DeleteAsync(Guid id)
         {
-            await _menuRepository.DeleteAsync(s => s.Id == id);
+            await _menuRepository.DeleteAsync(id);
         }
 
         /// <summary>

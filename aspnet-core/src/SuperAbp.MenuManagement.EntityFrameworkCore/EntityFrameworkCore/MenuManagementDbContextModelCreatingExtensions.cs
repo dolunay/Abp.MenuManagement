@@ -17,6 +17,7 @@ public static class MenuManagementDbContextModelCreatingExtensions
             b.ToTable(MenuManagementDbProperties.DbTablePrefix + nameof(Menu), MenuManagementDbProperties.DbSchema);
             b.Property(p => p.Name).IsRequired().HasMaxLength(MenuConsts.MaxNameLength);
             b.Property(p => p.Permission).HasMaxLength(MenuConsts.MaxPermissionLength);
+            b.Property(p => p.Key).HasMaxLength(MenuConsts.MaxKeyLength);
             b.Property(p => p.Route).HasMaxLength(MenuConsts.MaxRouteLength);
             b.Property(p => p.Icon).HasMaxLength(MenuConsts.MaxIconLength);
             b.Property(p => p.Sort).IsRequired().HasDefaultValue(0);

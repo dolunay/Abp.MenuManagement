@@ -45,6 +45,7 @@ namespace SuperAbp.MenuManagement.Menus
                 Icon = "test_icon",
                 ParentId = _menuTestData.MenuId,
                 Route = "test_route",
+                Key = "test_key",
                 Sort = 999
             };
             var articleDto = await _menuAppService.CreateAsync(dto);
@@ -60,6 +61,7 @@ namespace SuperAbp.MenuManagement.Menus
                 article.Icon.ShouldBe(dto.Icon);
                 article.ParentId.ShouldBe(dto.ParentId);
                 article.Route.ShouldBe(dto.Route);
+                article.Key.ShouldBe(dto.Key);
                 article.Sort.ShouldBe(dto.Sort);
             });
         }
@@ -78,6 +80,7 @@ namespace SuperAbp.MenuManagement.Menus
                     Icon = "new_icon",
                     ParentId = null,
                     Route = "new_route",
+                    Key = "new_key",
                     Sort = 999
                 };
                 await _menuAppService.UpdateAsync(_menuTestData.MenuId, dto);
@@ -91,6 +94,7 @@ namespace SuperAbp.MenuManagement.Menus
                     menu.Icon.ShouldBe(dto.Icon);
                     menu.ParentId.ShouldBe(dto.ParentId);
                     menu.Route.ShouldBe(dto.Route);
+                    menu.Key.ShouldBe(dto.Key);
                     menu.Sort.ShouldBe(dto.Sort);
                 });
             });

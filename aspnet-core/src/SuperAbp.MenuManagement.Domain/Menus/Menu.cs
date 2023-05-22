@@ -7,12 +7,10 @@ namespace SuperAbp.MenuManagement.Menus
     {
         public Menu()
         {
-            
         }
 
-        public Menu(Guid id):base(id)
+        public Menu(Guid id) : base(id)
         {
-            
         }
 
         /// <summary>
@@ -34,6 +32,8 @@ namespace SuperAbp.MenuManagement.Menus
         /// 路由
         /// </summary>
         public string Route { get; set; }
+
+        public string Key { get; set; }
 
         /// <summary>
         /// 排序
