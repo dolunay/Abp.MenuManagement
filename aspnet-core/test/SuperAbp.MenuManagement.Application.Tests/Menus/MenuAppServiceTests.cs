@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Shouldly;
+using Volo.Abp;
+using Volo.Abp.Domain.Entities;
 using Xunit;
 
 namespace SuperAbp.MenuManagement.Menus
@@ -104,6 +106,17 @@ namespace SuperAbp.MenuManagement.Menus
         public async Task Should_Delete_A_Article()
         {
             await _menuAppService.DeleteAsync(_menuTestData.MenuId);
+            await Should.ThrowAsync<EntityNotFoundException>(
+               async () =>
+                   await _menuAppService.GetEditorAsync(_menuTestData.MenuId));
+        }
+
+        [Fact]
+        public async Task Should_Delete_A_Article_Any_Children()
+        {
+            await Should.ThrowAsync<UserFriendlyException>(
+            async () =>
+                await _menuAppService.DeleteAsync(_menuTestData.MenuParentId));
         }
     }
 }

@@ -15,11 +15,11 @@ namespace SuperAbp.MenuManagement.Menus
     [Route("api/menus")]
     public class MenuController : MenuManagementController, IMenuAppService
     {
-        private readonly IMenuAppService _menuAppService;
+        protected IMenuAppService MenuAppService { get; }
 
         public MenuController(IMenuAppService menuAppService)
         {
-            _menuAppService = menuAppService;
+            MenuAppService = menuAppService;
         }
 
         /// <summary>
@@ -28,9 +28,9 @@ namespace SuperAbp.MenuManagement.Menus
         /// <param name="id">主键</param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public Task<GetMenuForEditorOutput> GetEditorAsync(Guid id)
+        public virtual async Task<GetMenuForEditorOutput> GetEditorAsync(Guid id)
         {
-            return _menuAppService.GetEditorAsync(id);
+            return await MenuAppService.GetEditorAsync(id);
         }
 
         /// <summary>
@@ -38,9 +38,9 @@ namespace SuperAbp.MenuManagement.Menus
         /// </summary>
         /// <returns></returns>
         [HttpGet("list")]
-        public Task<ListResultDto<MenuListDto>> GetAllListAsync()
+        public virtual async Task<ListResultDto<MenuListDto>> GetAllListAsync()
         {
-            return _menuAppService.GetAllListAsync();
+            return await MenuAppService.GetAllListAsync();
         }
 
         /// <summary>
@@ -48,9 +48,9 @@ namespace SuperAbp.MenuManagement.Menus
         /// </summary>
         /// <returns></returns>
         [HttpGet("root")]
-        public Task<ListResultDto<MenuTreeNodeDto>> GetRootAsync()
+        public virtual async Task<ListResultDto<MenuTreeNodeDto>> GetRootAsync()
         {
-            return _menuAppService.GetRootAsync();
+            return await MenuAppService.GetRootAsync();
         }
 
         /// <summary>
@@ -59,9 +59,9 @@ namespace SuperAbp.MenuManagement.Menus
         /// <param name="id">父Id</param>
         /// <returns></returns>
         [HttpGet("{id}/children")]
-        public Task<ListResultDto<MenuTreeNodeDto>> GetChildrenAsync(Guid id)
+        public virtual async Task<ListResultDto<MenuTreeNodeDto>> GetChildrenAsync(Guid id)
         {
-            return _menuAppService.GetChildrenAsync(id);
+            return await MenuAppService.GetChildrenAsync(id);
         }
 
         /// <summary>
@@ -70,9 +70,9 @@ namespace SuperAbp.MenuManagement.Menus
         /// <param name="input">查询条件</param>
         /// <returns>结果</returns>
         [HttpGet]
-        public Task<PagedResultDto<MenuListDto>> GetListAsync(GetMenusInput input)
+        public virtual async Task<PagedResultDto<MenuListDto>> GetListAsync(GetMenusInput input)
         {
-            return _menuAppService.GetListAsync(input);
+            return await MenuAppService.GetListAsync(input);
         }
 
         /// <summary>
@@ -81,9 +81,9 @@ namespace SuperAbp.MenuManagement.Menus
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPost]
-        public Task<MenuListDto> CreateAsync(MenuCreateDto input)
+        public virtual async Task<MenuListDto> CreateAsync(MenuCreateDto input)
         {
-            return _menuAppService.CreateAsync(input);
+            return await MenuAppService.CreateAsync(input);
         }
 
         /// <summary>
@@ -93,9 +93,9 @@ namespace SuperAbp.MenuManagement.Menus
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public Task<MenuListDto> UpdateAsync(Guid id, MenuUpdateDto input)
+        public virtual async Task<MenuListDto> UpdateAsync(Guid id, MenuUpdateDto input)
         {
-            return _menuAppService.UpdateAsync(id, input);
+            return await MenuAppService.UpdateAsync(id, input);
         }
 
         /// <summary>
@@ -104,9 +104,9 @@ namespace SuperAbp.MenuManagement.Menus
         /// <param name="id">主键</param>
         /// <returns></returns>
         [HttpDelete("{id}")]
-        public Task DeleteAsync(Guid id)
+        public virtual async Task DeleteAsync(Guid id)
         {
-            return _menuAppService.DeleteAsync(id);
+            await MenuAppService.DeleteAsync(id);
         }
     }
 }

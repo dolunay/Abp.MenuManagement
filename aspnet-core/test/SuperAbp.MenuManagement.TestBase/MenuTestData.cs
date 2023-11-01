@@ -6,4 +6,5 @@ namespace SuperAbp.MenuManagement;
 public class MenuTestData : ISingletonDependency
 {
     public Guid MenuId { get; } = Guid.NewGuid();
+    public Guid MenuParentId { get; } = Guid.NewGuid();
 }

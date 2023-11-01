@@ -29,8 +29,21 @@ public class MenuManagementDataSeedContributor : IDataSeedContributor, ITransien
 
         using (_currentTenant.Change(context?.TenantId))
         {
+            var menu = new Menu(_menuTestData.MenuParentId)
+            {
+                Name = "Parent Name",
+                Permission = "Parent Permission",
+                Group = false,
+                HideInBreadcrumb = false,
+                Icon = "Parent Icon",
+                ParentId = null,
+                Route = "Parent Route",
+                Sort = 999
+            };
+            await _menuRepository.InsertAsync(menu);
             await _menuRepository.InsertAsync(new Menu(_menuTestData.MenuId)
             {
+                Parent = menu,
                 Name = "Name",
                 Permission = "Permission",
                 Group = false,

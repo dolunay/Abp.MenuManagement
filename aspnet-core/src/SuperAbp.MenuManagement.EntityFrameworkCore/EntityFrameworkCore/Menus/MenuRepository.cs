@@ -16,6 +16,12 @@ namespace SuperAbp.MenuManagement.EntityFrameworkCore.Menus
         {
         }
 
+        public virtual async Task<bool> AnyByParentIdAsync(Guid parentId)
+        {
+            var dbSet = await GetDbSetAsync();
+            return await dbSet.AnyAsync(a => a.ParentId == parentId);
+        }
+
         public override async Task<IQueryable<Menu>> WithDetailsAsync()
         {
             return (await GetQueryableAsync()).Include(m => m.Parent);

@@ -7,5 +7,6 @@ namespace SuperAbp.MenuManagement.Menus
 {
     public interface IMenuRepository : IRepository<Menu, Guid>
     {
+        Task<bool> AnyByParentIdAsync(Guid parentId);
     }
 }
