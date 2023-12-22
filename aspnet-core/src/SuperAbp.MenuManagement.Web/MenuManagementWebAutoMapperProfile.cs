@@ -9,5 +9,6 @@ public class MenuManagementWebAutoMapperProfile : Profile
     public MenuManagementWebAutoMapperProfile()
     {
         CreateMap<MenuCreateViewModel, MenuCreateDto>();
+        CreateMap<GetMenuForEditorOutput, MenuEditViewModel>();
     }
 }

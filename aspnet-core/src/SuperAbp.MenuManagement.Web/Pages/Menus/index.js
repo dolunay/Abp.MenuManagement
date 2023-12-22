@@ -35,14 +35,22 @@
                         title: l("Actions"),
                         rowAction: {
                             items: [
-                                {
-                                    text: l('View'),
-                                    action: function (data) {
-                                        _detailModal.open({
-                                            id: data.record.id,
-                                        });
-                                    },
-                                },
+                                //{
+                                //    text: l('View'),
+                                //    action: function (data) {
+                                //        _detailModal.open({
+                                //            id: data.record.id,
+                                //        });
+                                //    },
+                                //},
+                                //{
+                                //    text: l('Edit'),
+                                //    action: function (data) {
+                                //        _editModal.open({
+                                //            id: data.record.id,
+                                //        });
+                                //    },
+                                //},
                             ]
                         }
                     },

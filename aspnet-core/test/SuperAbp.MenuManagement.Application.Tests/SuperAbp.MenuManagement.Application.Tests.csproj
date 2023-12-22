@@ -3,7 +3,7 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>SuperAbp.MenuManagement</RootNamespace>
 	  <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -11,12 +11,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\SuperAbp.MenuManagement.Application\SuperAbp.MenuManagement.Application.csproj" />
     <ProjectReference Include="..\SuperAbp.MenuManagement.Domain.Tests\SuperAbp.MenuManagement.Domain.Tests.csproj" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Update="ConfigureAwait.Fody" Version="3.3.2" />
-    <PackageReference Update="Fody" Version="6.6.4">
+    <PackageReference Update="Fody" Version="6.8.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
