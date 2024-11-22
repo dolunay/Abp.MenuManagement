@@ -21,39 +21,15 @@
         var _$table = _$wrapper.find('table');
         _dataTable = _$table.DataTable(
             abp.libs.datatables.normalizeConfiguration({
-                order: [[3, 'desc']],
-                processing: true,
                 serverSide: true,
+                paging: true,
+                order: [[3, "asc"]],
                 searching: false,
                 scrollX: true,
-                paging: true,
                 ajax: abp.libs.datatables.createAjax(_menuAppService.getList, function () {
                     return initParams();
                 }),
                 columnDefs: [
-                    {
-                        title: l("Actions"),
-                        rowAction: {
-                            items: [
-                                //{
-                                //    text: l('View'),
-                                //    action: function (data) {
-                                //        _detailModal.open({
-                                //            id: data.record.id,
-                                //        });
-                                //    },
-                                //},
-                                //{
-                                //    text: l('Edit'),
-                                //    action: function (data) {
-                                //        _editModal.open({
-                                //            id: data.record.id,
-                                //        });
-                                //    },
-                                //},
-                            ]
-                        }
-                    },
                     {
                         title: l('Name'),
                         data: 'name'
